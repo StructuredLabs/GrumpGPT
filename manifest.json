@@ -3,7 +3,7 @@
   "name": "Hello, world! Extension",
   "version": "1.0",
   "description": "A simple Chrome extension that displays 'Hello, world!' in a popup.",
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html"
   }
 }
