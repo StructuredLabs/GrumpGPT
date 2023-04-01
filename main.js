@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("asdfasdf")
   var myForm = document.getElementById("myForm");
   myForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -17,20 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var myForm = document.querySelector("form");
 // TODO: change this everytime we start up the colab notebook
-const URL = "http://0ad9-34-85-140-164.ngrok.io";
+const URL = "http://6e0a-34-85-140-164.ngrok.io";
 
 function generateAngryText() {
   var question = document.getElementById("question").value;
-  console.log(question);
   fetch(URL, {
-    method: "GET",
-    // mode: "no-cors",
+    method: 'POST',
+    headers: {
+      'Content-Type': 'text/plain'
+    },
+    body: question
   })
     .then(function (response) {
       return response.text();
     })
     .then(function (text) {
-      console.log(text)
       document.getElementById("response").innerHTML = text;
       var audioSrc =
         "https://translate.google.com/translate_tts?ie=UTF-8&q=" +
