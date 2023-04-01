@@ -3,7 +3,6 @@
   <head>
     <title>GrumpGPT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <script src="main.js"></script>
     <style>
       body {
         background-color: #F7F7F7;
@@ -69,25 +68,14 @@
     </style>
   </head>
   <body>
+    <script src="main.js"></script>
     <h1>GrumpGPT</h1>
     <img src="icons/icon.png" alt="Image Description">
-    <form onsubmit="event.preventDefault(); generateAngryText();">
+    <form id="myForm">
       <p>GrumpGPT is ready for your questions... GRR.</p>
       <textarea id="question" rows="4" cols="50"></textarea>
       <br><br>
       <button type="submit">Ask GrumpGPT</button>
     </form>
     <div id="response"></div>
-    <!-- <audio controls id="audio"></audio> -->
-    <!-- <script>
-      var audio = document.getElementById("audio");
-      audio.style.display = "none";
-      audio.onplay = function() {
-        var button = document.getElementsByTagName("button")[0];
-        button.disabled = true;
-        setTimeout(function() {
-          button.disabled = false;
-        }, audio.duration * 1000);
-      };
-    </script> -->
   </body

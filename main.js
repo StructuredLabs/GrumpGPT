@@ -1,14 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+  var myForm = document.getElementById("myForm");
+  myForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    generateAngryText();
+  });
+});
+
+var myForm = document.querySelector("form");
+const URL = "http://310a-104-155-223-75.ngrok.io/";
+
 function generateAngryText() {
-  console.log("gets here");
   var question = document.getElementById("question").value;
-  console.log(question);
-  // axios.post("http://127.0.0.1:5000/generate", { question: question })
-  fetch("http://44a3-130-211-255-221.ngrok.io").then(function (response) {
-    // var audioUrl = response.data.audio_url;
-    // var audio = new Audio(audioUrl);
-    // audio.play();
-    var response = response.data.text;
+  fetch(URL, {
+    method: "GET",
+    mode: "no-cors",
+  }).then(function (response) {
+    var response = response.text();
     document.getElementById("response").innerHTML = response;
-    console.log(response);
   });
 }
