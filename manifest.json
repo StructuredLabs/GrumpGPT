@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Your contrarian pal.",
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "index.html",
      "default_icon": {
       "128": "icons/icon.png"
     }
