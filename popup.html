@@ -1,14 +1,110 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Grump GPT</title>
+    <title>GrumpGPT</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <style>
+      body {
+        background-color: #F7F7F7;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        color: #333333;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+        padding: 20px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      button[type="submit"] {
+        background-color: #FF5C5C;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #E85252;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      function generateAngryText() {
+        var question = document.getElementById("question").value;
+        console.log(question)
+        axios.post("http://127.0.0.1:5000/generate", { question: question })
+          .then(function(response) {
+            // var audioUrl = response.data.audio_url;
+            // var audio = new Audio(audioUrl);
+            // audio.play();
+            var response = response.data.text;
+            document.getElementById("response").innerHTML = responseText;
+          });
+      }
+    </script>
   </head>
   <body>
     <h1>GrumpGPT</h1>
-    <h2>Your contrarian pal!</h2>
-    
-    <button id="record-button">Record</button>
-    <div id="text-area"></div>
-    <script src="popup.js"></script>
-  </body>
-</html>
+    <img src="icons/icon.png" alt="Image Description">
+    <form onsubmit="event.preventDefault(); generateAngryText();">
+      <p>GrumpGPT is ready for your questions... GRR.</p>
+      <textarea id="question" rows="4" cols="50"></textarea>
+      <br><br>
+      <button type="submit">Ask GrumpGPT</button>
+    </form>
+    <div id="response"></div>
+    <script src="main.js"></script>
+    <!-- <audio controls id="audio"></audio> -->
+    <!-- <script>
+      var audio = document.getElementById("audio");
+      audio.style.display = "none";
+      audio.onplay = function() {
+        var button = document.getElementsByTagName("button")[0];
+        button.disabled = true;
+        setTimeout(function() {
+          button.disabled = false;
+        }, audio.duration * 1000);
+      };
+    </script> -->
+  </body

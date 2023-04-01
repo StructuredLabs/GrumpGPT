@@ -10,8 +10,8 @@
     }
   },
   "permissions": [
+    "tabs",
     "activeTab",
-    "scripting",
-    "microphone"
+    "declarativeContent"
   ]
 }
