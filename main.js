@@ -34,7 +34,7 @@ function generateAngryText() {
       document.getElementById("response").innerHTML = text;
       var audioSrc =
         "https://translate.google.com/translate_tts?ie=UTF-8&q=" +
-        encodeURIComponent("hellooo fool") +
+        encodeURIComponent(text) +
         "&tl=en&client=tw-ob";
       var audio = new Audio(audioSrc);
       audio.play();
