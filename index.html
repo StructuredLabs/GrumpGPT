@@ -2,10 +2,8 @@
 <html>
   <head>
     <title>GrumpGPT</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+    <script src="main.js"></script>
     <style>
       body {
         background-color: #F7F7F7;
@@ -69,20 +67,6 @@
         margin-bottom: 20px;
       }
     </style>
-    <script>
-      function generateAngryText() {
-        var question = document.getElementById("question").value;
-        console.log(question)
-        axios.post("http://127.0.0.1:5000/generate", { question: question })
-          .then(function(response) {
-            // var audioUrl = response.data.audio_url;
-            // var audio = new Audio(audioUrl);
-            // audio.play();
-            var response = response.data.text;
-            document.getElementById("response").innerHTML = responseText;
-          });
-      }
-    </script>
   </head>
   <body>
     <h1>GrumpGPT</h1>
@@ -94,7 +78,6 @@
       <button type="submit">Ask GrumpGPT</button>
     </form>
     <div id="response"></div>
-    <script src="main.js"></script>
     <!-- <audio controls id="audio"></audio> -->
     <!-- <script>
       var audio = document.getElementById("audio");

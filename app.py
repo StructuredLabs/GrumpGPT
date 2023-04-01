@@ -5,8 +5,8 @@ from gtts import gTTS
 import os
 
 app = Flask(__name__)
-os.environ['HUGGINGFACEHUB_API_TOKEN'] = 'HUGGINGFACEHUB_API_TOKEN'
-os.environ['OPENAI_API_KEY'] = 'OPENAI_API_KEY'
+os.environ['HUGGINGFACEHUB_API_TOKEN'] = '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'
+os.environ['OPENAI_API_KEY'] = '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'
 
 # initialize HF LLM
 flan_t5 = HuggingFaceHub(
