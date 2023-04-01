@@ -3,79 +3,7 @@
   <head>
     <title>GrumpGPT</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <style>
-      body {
-        background-color: #F7F7F7;
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-        color: #333333;
-        margin: 0;
-        padding: 0;
-      }
-
-      h1 {
-        text-align: center;
-        font-size: 36px;
-        font-weight: 700;
-        margin: 20px;
-        padding: 20px;
-      }
-
-      form {
-        max-width: 1000px;
-        margin: 20px auto;
-        text-align: center;
-        padding: 20px;
-        background-color: #FFFFFF;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-      }
-
-      input[type="text"] {
-        width: 80%;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-
-      button[type="submit"] {
-        background-color: #FF5C5C;
-        color: #FFFFFF;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #E85252;
-      }
-
-      img {
-        display: block;
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 20px;
-      }
-      
-      #response {
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #FFFFFF;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        font-size: 20px;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <script src="main.js"></script>
@@ -87,6 +15,7 @@
       <br><br>
       <br><br>
       <button type="submit">Ask GrumpGPT</button>
+      <button type="button" id="clearButton">Clear</button>
     </form>
     <div id="response"></div>
   </body>

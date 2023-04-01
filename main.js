@@ -4,6 +4,14 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     generateAngryText();
   });
+
+  document.getElementById("question").value = "";
+  document.getElementById("response").innerHTML = "";
+
+  document.getElementById("clearButton").addEventListener("click", function () {
+    document.getElementById("question").value = "";
+    document.getElementById("response").innerHTML = "";
+  });
 });
 
 var myForm = document.querySelector("form");
