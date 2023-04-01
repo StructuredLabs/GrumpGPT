@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var myForm = document.querySelector("form");
 // TODO: change this everytime we start up the colab notebook
-const URL = "http://6e0a-34-85-140-164.ngrok.io";
+const URL = "https://ssinghal.pythonanywhere.com";
 
 function generateAngryText() {
   var question = document.getElementById("question").value;
